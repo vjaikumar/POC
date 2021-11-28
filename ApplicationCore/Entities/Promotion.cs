@@ -1,9 +1,8 @@
-﻿namespace PromotionEngine.Core
+﻿namespace ApplicationCore.Entities
 {
-    public class Promotion
+    public class Promotion: BaseEntity
     {
-
-        public int PromotionId { get; set; }
+                
         public int Quantity { get; set; }
         public string Type { get; set; }
         public string ProductCode { get; set; }

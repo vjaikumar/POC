@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PromotionEngine.Core
+namespace ApplicationCore.Entities
 {
-   public class Product
+  public  class AppliedOffer
     {
+        
     }
 }
