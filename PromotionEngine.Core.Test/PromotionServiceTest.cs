@@ -15,13 +15,13 @@ namespace PromotionEngine.Core
 
         IPromotionService promotionService;
 
-        [TestInitialize]
-             public void Setup()
-            {
+       [TestInitialize]
+       public void Setup()
+        {
                 promotionService = new IPromotionService();
                 _promotions = new List<Promotion>() { new Promotion() { Type = "Single", ProductCode = "A", Price = 130, Quantity = 3 }, new Promotion() { Type = "Single", ProductCode = "B", Price = 45, Quantity = 2 }, new Promotion() { Type = "Combo", ProductCode = "C;D", Price = 30, Quantity = 3 } };
 
-            }
+        }
 
         [TestMethod]
         public void Scenario_A_NoOffer()
