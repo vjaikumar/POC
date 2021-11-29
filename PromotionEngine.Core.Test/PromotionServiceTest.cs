@@ -36,13 +36,21 @@ namespace PromotionEngine.Core
         [TestMethod]
         public void Scenario_B_TwoOffer_Single()
         {
-
+            List<ProductCheckout> orderCart = new List<ProductCheckout>() { new ProductCheckout() { ProductCode = "A", Quantity = 5, DefaultPrice = 50 }, new ProductCheckout() { ProductCode = "B", Quantity = 5, DefaultPrice = 30 }, new ProductCheckout() { ProductCode = "C", Quantity = 1, DefaultPrice = 20 } };
+            double expectedValue = 370;
+            double actualValue = promotionService.ApplyPromotion(
+                orderCart,
+                _promotions).TotalPrice;
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestMethod]
         public void Scenario_C_TwoOffer_Single()
         {
-
+            List<ProductCheckout> orderCart = new List<ProductCheckout>() { new ProductCheckout() { ProductCode = "A", Quantity = 3, DefaultPrice = 50 }, new ProductCheckout() { ProductCode = "B", Quantity = 5, DefaultPrice = 30 }, new ProductCheckout() { ProductCode = "C", Quantity = 1, DefaultPrice = 20 }, new ProductCheckout() { ProductCode = "D", Quantity = 1, DefaultPrice = 15 } };
+            double expectedValue = 280;
+            double actualValue = promotionService.ApplyPromotion(orderCart, _promotions).TotalPrice;
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
     }
