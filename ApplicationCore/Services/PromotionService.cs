@@ -1,8 +1,17 @@
-﻿using ApplicationCore.Interface;
+﻿using ApplicationCore.Entities;
+using ApplicationCore.Interface;
+using System.Collections.Generic;
 
 namespace PromotionEngine.Core
 {
-    internal class PromotionService : IPromotionService
+    public class PromotionService : IPromotionService
     {
+        public AppliedOffer ApplyPromotion(List<ProductCheckout> checkoutList, List<Promotion> promotions)
+        {
+            AppliedOffer appliedOffer = new AppliedOffer();
+
+
+            return appliedOffer;
+        }
     }
 }
