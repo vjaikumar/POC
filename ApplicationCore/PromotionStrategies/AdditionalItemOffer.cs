@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using PromotionEngine.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,12 @@ namespace ApplicationCore.PromotionStrategies
         /// <returns></returns>
         public bool CanExecute(ProductCheckout product, List<Promotion> promotions)
         {
-            
+            appliedPromotion = promotions.Where(x => x.ProductCode == product.ProductCode).FirstOrDefault();
+            if (appliedPromotion != null && appliedPromotion.Type == Constants.Single)
+            {
+                product.IsValidated = true;
+                return true;
+            }
 
             return false;
         }
@@ -39,8 +45,23 @@ namespace ApplicationCore.PromotionStrategies
         public double CalculateProductPrice(List<ProductCheckout> productCheckoutList)
         {
             double finalPrice = 0;
-           
 
+            
+            try
+            {
+                int totalEligibleItems = ProductCheckout.Quantity / appliedPromotion.Quantity;
+                int remainingItems = ProductCheckout.Quantity % appliedPromotion.Quantity;
+                finalPrice = appliedPromotion.Price * totalEligibleItems + remainingItems * (ProductCheckout.DefaultPrice);
+
+            }
+            catch (ArithmeticException ex)
+            {
+                
+            }
+            catch (Exception e)
+            {
+                
+            }
             return finalPrice;
         }
     }
