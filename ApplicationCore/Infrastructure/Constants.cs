@@ -10,6 +10,10 @@ namespace PromotionEngine.Infrastructure
     {
         public const string Single = "Single";
         public const string Combo = "Combo";
+
+        public const string Products = "Products";
+        public const string Promotions = "Promotions";
+        public const string DataStore = "DataStore.json";
     }
     
 
