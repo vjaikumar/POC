@@ -1,9 +1,7 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using Microsoft.Extensions.Configuration;
-
 using PromotionEngine.Infrastructure;
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +22,7 @@ namespace PromotionEngine.Repository
             {
                 var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile(Constants.DataStore, false);
+
 
                 configuration = builder.Build();
             }
