@@ -14,7 +14,7 @@ namespace PromotionEngine.Core
             AppliedOffer appliedOffer = new AppliedOffer();
             List<IPromotionStrategy> strategies = new List<IPromotionStrategy>();
             strategies.Add(new AdditionalItemOffer());
-            
+            strategies.Add(new ComboOffer());
             try
             {
                 foreach (ProductCheckout item in checkoutList)

@@ -27,6 +27,7 @@ namespace ApplicationCore.PromotionStrategies
         /// <returns></returns>
         public bool CanExecute(ProductCheckout product, List<Promotion> promotions)
         {
+            ProductCheckout = product;
             appliedPromotion = promotions.Where(x => x.ProductCode == product.ProductCode).FirstOrDefault();
             if (appliedPromotion != null && appliedPromotion.Type == Constants.Single)
             {
