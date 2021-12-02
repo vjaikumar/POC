@@ -33,7 +33,14 @@ namespace PromotionEngine.Core
         public void Scenario_ComboOffer_WithOffer()
         {
             double expectedValue = 30;
-           
+            bool canExecute = _promotionStrategy.CanExecute(_productWithOffer.FirstOrDefault(), _promotions);
+            if (canExecute)
+            {
+                double actualValue = _promotionStrategy.CalculateProductPrice(_productWithOffer);
+                Assert.AreEqual(expectedValue, actualValue);
+            }
+
+
 
         }
 
@@ -41,7 +48,13 @@ namespace PromotionEngine.Core
         public void Scenario_ComboOffer_WithoutOffer()
         {
             double expectedValue = 20;
-            
+            bool canExecute = _promotionStrategy.CanExecute(_productWithoutOffer.FirstOrDefault(), _promotions);
+            if (canExecute)
+            {
+                double actualValue = _promotionStrategy.CalculateProductPrice(_productWithoutOffer);
+                Assert.AreEqual(expectedValue, actualValue);
+            }
+
 
         }
     }
