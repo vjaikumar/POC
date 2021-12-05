@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Infrastructure;
 using ApplicationCore.Interfaces;
 using PromotionEngine.Infrastructure;
 using System;
@@ -57,7 +58,7 @@ namespace ApplicationCore.PromotionStrategies
             }
             catch (ArithmeticException ex)
             {
-                
+                LogWriter.LogWrite("Error in AdditionalItemOffer :" + ex.Message);
             }
             catch (Exception e)
             {

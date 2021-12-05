@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Infrastructure;
 using ApplicationCore.Interfaces;
 using PromotionEngine.Infrastructure;
 using System;
@@ -80,11 +81,11 @@ namespace ApplicationCore.PromotionStrategies
             }
             catch (ArithmeticException ex)
             {
-                
+                LogWriter.LogWrite("Error in ComboOffer :" + ex.Message);
             }
             catch (Exception e)
             {
-                
+                LogWriter.LogWrite("Error in ComboOffer :" + e.Message);
             }
 
             return finalPrice;

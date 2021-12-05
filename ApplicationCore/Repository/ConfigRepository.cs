@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Infrastructure;
 using ApplicationCore.Interfaces;
 using Microsoft.Extensions.Configuration;
 using PromotionEngine.Infrastructure;
@@ -28,11 +29,12 @@ namespace PromotionEngine.Repository
             }
             catch (UnauthorizedAccessException ex)
             {
+                LogWriter.LogWrite("Error in Config file Loading :" + ex.Message);
             }
             catch (Exception ex)
             {
 
-                
+                LogWriter.LogWrite("Error in Config file Loading :" + ex.Message);
             }
 
         }

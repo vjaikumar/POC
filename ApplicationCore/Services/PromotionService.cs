@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Infrastructure;
 using ApplicationCore.Interface;
 using ApplicationCore.Interfaces;
 using ApplicationCore.PromotionStrategies;
@@ -37,7 +38,7 @@ namespace PromotionEngine.Core
             }
             catch (Exception ex)
             {
-                
+                LogWriter.LogWrite("Error in Applying Promotion in PromotionStrategy:" + ex.Message);
             }
 
             return appliedOffer;
