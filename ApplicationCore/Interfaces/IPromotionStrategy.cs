@@ -1,7 +1,5 @@
 ﻿using ApplicationCore.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ApplicationCore.Interfaces
 {
@@ -10,7 +8,6 @@ namespace ApplicationCore.Interfaces
 
         bool CanExecute(ProductCheckout product, List<Promotion> promotions);
 
-      
         double CalculateProductPrice(List<ProductCheckout> productCheckoutList);
     }
 }

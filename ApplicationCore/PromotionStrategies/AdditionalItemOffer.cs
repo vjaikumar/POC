@@ -47,14 +47,12 @@ namespace ApplicationCore.PromotionStrategies
         public double CalculateProductPrice(List<ProductCheckout> productCheckoutList)
         {
             double finalPrice = 0;
-
-            
+          
             try
             {
                 int totalEligibleItems = ProductCheckout.Quantity / appliedPromotion.Quantity;
                 int remainingItems = ProductCheckout.Quantity % appliedPromotion.Quantity;
                 finalPrice = appliedPromotion.Price * totalEligibleItems + remainingItems * (ProductCheckout.DefaultPrice);
-
             }
             catch (ArithmeticException ex)
             {

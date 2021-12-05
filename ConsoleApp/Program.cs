@@ -17,11 +17,11 @@ namespace ConsoleApp
                 Facade facade = new Facade();
 
 
-                facade.CheckoutProducts();///User input for the Product quantity  
+                facade.CheckoutProducts();
 
-                facade.ApplyPromotion();// Apply Promotion offers for the product
+                facade.ApplyPromotion();
 
-                facade.DisplayTotalPrice(); //Display result 
+                facade.DisplayTotalPrice(); 
 
                 Console.ReadLine();
             }

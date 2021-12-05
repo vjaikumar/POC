@@ -4,14 +4,12 @@ using PromotionEngine.Repository;
 using System;
 using System.Collections.Generic;
 
-
 namespace ApplicationCore.PresentationLayer
 {
     public class ConsoleLayer : IPromotionInputOutput
     {
         ConfigRepository configManagement;
 
-      
         public ConsoleLayer()
         {
             configManagement = new ConfigRepository();

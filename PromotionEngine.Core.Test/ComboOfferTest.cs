@@ -1,9 +1,7 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using ApplicationCore.Entities;
-
 using ApplicationCore.Interfaces;
 using ApplicationCore.PromotionStrategies;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

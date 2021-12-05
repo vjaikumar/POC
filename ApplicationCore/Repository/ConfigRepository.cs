@@ -16,14 +16,12 @@ namespace PromotionEngine.Repository
     {
         IConfiguration configuration;
 
-
         public ConfigRepository()
         {
             try
             {
                 var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile(Constants.DataStore, false);
-
 
                 configuration = builder.Build();
             }

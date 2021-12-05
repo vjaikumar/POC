@@ -2,9 +2,7 @@
 using ApplicationCore.Interfaces;
 using ApplicationCore.PromotionStrategies;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PromotionEngine.Core
 {

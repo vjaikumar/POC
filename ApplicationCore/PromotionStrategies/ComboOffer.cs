@@ -5,7 +5,6 @@ using PromotionEngine.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ApplicationCore.PromotionStrategies
 {
@@ -14,7 +13,6 @@ namespace ApplicationCore.PromotionStrategies
         Promotion appliedPromotion;
         ProductCheckout recentProductCheckout;
         List<ProductCheckout> productCheckouts;
-
       
         public bool CanExecute(ProductCheckout productCheckout, List<Promotion> promotions)
         {
@@ -35,7 +33,6 @@ namespace ApplicationCore.PromotionStrategies
             productCheckouts = new List<ProductCheckout>();
 
             double finalPrice = 0;
-
 
             try
             {
