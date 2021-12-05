@@ -40,7 +40,7 @@ namespace ApplicationCore.BusinessLayer
             return false;
         }
 
-        internal bool ApplyPromotion()
+        public bool ApplyPromotion()
         {
             try
             {
