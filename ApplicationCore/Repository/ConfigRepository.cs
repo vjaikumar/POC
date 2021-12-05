@@ -37,10 +37,7 @@ namespace PromotionEngine.Repository
 
         }
 
-        /// <summary>
-        /// Get AvilableProducts
-        /// </summary>
-        /// <returns></returns>
+       
         public List<Product> GetAvilableProducts()
         {
             List<Product> productList = new List<Product>();
@@ -55,10 +52,7 @@ namespace PromotionEngine.Repository
             return productList;
         }
 
-        /// <summary>
-        /// Get ProductOffers
-        /// </summary>
-        /// <returns></returns>
+      
         public List<Promotion> GetProductOffers()
         {
             List<Promotion> lst = new List<Promotion>();
